@@ -2,9 +2,10 @@
 
 DISTNAME=	${VERS}
 PKGNAME=	megaglest-${VERS}
-VERS=		3.9.1
+GITHUB_PROJECT=	megaglest-source
+VERS=		3.12.0
 CATEGORIES=	games
-MASTER_SITES=	https://github.com/MegaGlest/megaglest-source/archive/
+MASTER_SITES=	${MASTER_SITE_GITHUB:=MegaGlest/}
 
 MAINTAINER=	pkgsrc-users@NetBSD.org
 HOMEPAGE=	http://megaglest.org/
@@ -12,18 +13,13 @@ COMMENT=	Cross-platform 3D real-time-strategy game with seven factions
 LICENSE=	gnu-gpl-v3
 
 WRKSRC=		${WRKDIR}/megaglest-source-${VERS}
-USE_TOOLS+=	cmake bash autoconf automake pkg-config
-REPLACE_BASH=	build-mg.sh
+USE_TOOLS+=	bash autoconf automake pkg-config
+USE_CMAKE=	yes
 USE_LANGUAGES=	c c++
 
-EXTRACT_USING=	bsdtar
-
-#Does not extract clean by itself. Upon fail, extract manually, uncomment
-#this, and make again.
-#do-extract:
-
-do-build:
-	cd ${WRKSRC} && ./build-mg.sh
+EXTRACT_USING=	gtar
+GCC_REQD+=	4.9
+CXX_FLAGS+=	-std=c++11
 
 .include "../../graphics/aalib/buildlink3.mk"
 .include "../../x11/damageproto/buildlink3.mk"
@@ -35,11 +31,14 @@ do-build:
 .include "../../multimedia/libogg/buildlink3.mk"
 .include "../../audio/libvorbis/buildlink3.mk"
 .include "../../lang/lua/buildlink3.mk"
-.include "../../devel/SDL/buildlink3.mk"
+.include "../../devel/SDL2/buildlink3.mk"
 .include "../../textproc/xerces-c/buildlink3.mk"
 .include "../../x11/xextproto/buildlink3.mk"
 .include "../../x11/xf86vidmodeproto/buildlink3.mk"
 .include "../../x11/xproto/buildlink3.mk"
 .include "../../x11/wxGTK28/buildlink3.mk"
-
+.include "../../wip/ftgl/buildlink3.mk"
+.include "../../wip/libircclient/buildlink3.mk"
+.include "../../graphics/glew/buildlink3.mk"
+.include "../../www/curl/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"
