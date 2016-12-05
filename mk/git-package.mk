@@ -23,6 +23,9 @@
 #
 #	GIT_ENV.${id}
 #		The environment for git, to set e.g. GIT_SSL_NO_VERIFY=true
+#
+#	GIT_SKIP_SUBMODULES.{id}
+#		(default no)
 
 .if !defined(_PKG_MK_GIT_PACKAGE_MK)
 _PKG_MK_GIT_PACKAGE_MK=	# defined
@@ -53,6 +56,7 @@ GIT_REPOSITORIES?=	# none
 .  if !defined(GIT_REPO.${_repo_})
 PKG_FAIL_REASON+=	"[git-package.mk] GIT_REPO."${_repo_:Q}" must be set."
 .  endif
+GIT_SKIP_SUBMODULES.${_repo_}?=	"no"
 .endfor
 
 #
@@ -86,8 +90,13 @@ _GIT_FLAG.${repo}=	tags/${GIT_TAG.${repo}}
 _GIT_FLAG.${repo}=	origin/HEAD
 .  endif
 
-_GIT_FETCH_FLAGS.${repo}=	--quiet --recurse-submodules=yes --tags
-_GIT_CLONE_FLAGS.${repo}=	--quiet --recursive
+_GIT_FETCH_FLAGS.${repo}=	--quiet --tags
+_GIT_CLONE_FLAGS.${repo}=	--quiet
+
+.if !empty(GIT_SKIP_SUBMODULES.${repo}:M[Nn][Oo])
+_GIT_FETCH_FLAGS.${repo}=	--recurse-submodules=yes
+_GIT_CLONE_FLAGS.${repo}=	--recursive
+.endif
 
 # For revision checkout we need deep copy
 . if !defined(GIT_REVISION.${repo}) && !empty(GIT_DEEP_CLONE.${repo}:M[yY][eE][sS])
