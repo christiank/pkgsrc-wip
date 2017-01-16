@@ -5,9 +5,7 @@ CATEGORIES=	games
 MASTER_SITES=	# defined
 
 GIT_REPOSITORIES=	stepmania
-#GIT_REPO.stepmania=	https://github.com/stepmania/stepmania.git
 GIT_REPO.stepmania=	/home/charlotte/devel/stepmania
-#GIT_TAG.stepmania=	v${PKGVERSION_NOREV}
 GIT_BRANCH.stepmania=	charlotte_netbsd
 
 # When we clone, we get the default branch by default ("master"), but it
@@ -28,8 +26,6 @@ CONFIGURE_DIRS+=	Build
 CMAKE_ARG_PATH=		..
 CMAKE_ARGS+=		-DWITH_STATIC_LINKING:BOOL=OFF
 
-#CMAKE_ARGS+=		-DWITH_FFMPEG_JOBS:INT=${MAKE_JOBS}
-
 DEPENDS+=	nasm>=2:../../devel/nasm
 
 .include "../../audio/libmad/buildlink3.mk"
@@ -37,13 +33,7 @@ DEPENDS+=	nasm>=2:../../devel/nasm
 .include "../../devel/pcre/buildlink3.mk"
 .include "../../graphics/glew/buildlink3.mk"
 .include "../../graphics/png/buildlink3.mk"
-#.include "../../math/ltm/buildlink3.mk"
 .include "../../multimedia/libogg/buildlink3.mk"
-#.include "../../security/libtomcrypt/buildlink3.mk"
 .include "../../wip/mk/git-package.mk"
 .include "../../mk/jpeg.buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"
-
-# XXX which version? upstream says you need the submodule'd one, but I
-# seriously doubt that
-#.include "../../multimedia/ffmpeg/buildlink3.mk" 
