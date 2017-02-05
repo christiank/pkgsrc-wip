@@ -1,0 +1,2 @@
+- cannot link -- claims it cannot find -lglew -- very likely there's a CMake
+  file which thinks it knows better than we do. 

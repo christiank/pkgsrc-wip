@@ -5,8 +5,13 @@ CATEGORIES=	games
 MASTER_SITES=	# defined
 
 GIT_REPOSITORIES=	stepmania
-GIT_REPO.stepmania=	/home/charlotte/devel/stepmania
+GIT_REPO.stepmania=	https://github.com/christiank/stepmania
 GIT_BRANCH.stepmania=	charlotte_netbsd
+
+MAINTAINER=	cfkoch@edgebsd.org
+COMMENT=	Advanced rhythm game
+HOMEPAGE=	https://www.stepmania.com/
+LICENSE=	mit
 
 # When we clone, we get the default branch by default ("master"), but it
 # contains submodules, at least one of which contains submodules *itself* --
@@ -21,10 +26,10 @@ GIT_SKIP_SUBMODULES.stepmania=	yes
 WRKSRC=	${WRKDIR}/stepmania
 
 USE_LANGUAGES+=	c c++
-USE_CMAKE=		yes
-CONFIGURE_DIRS+=	Build
-CMAKE_ARG_PATH=		..
-CMAKE_ARGS+=		-DWITH_STATIC_LINKING:BOOL=OFF
+USE_CMAKE=	yes
+CONFIGURE_DIRS+=Build
+CMAKE_ARG_PATH=	..
+CMAKE_ARGS+=	-DWITH_STATIC_LINKING:BOOL=OFF
 
 DEPENDS+=	nasm>=2:../../devel/nasm
 
