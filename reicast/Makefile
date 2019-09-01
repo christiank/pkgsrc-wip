@@ -1,7 +1,7 @@
 # $NetBSD$
 
 GITHUB_PROJECT=	reicast-emulator
-GITHUB_TAG=	6b434be3ae3cb6a1e0b56c8f93838be9e3a7dfa2
+GITHUB_TAG=	aeea2e1372ff9271f73e1197caea46a8851b6369
 DISTNAME=	reicast-${GITHUB_TAG}
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_GITHUB:=dressupgeekout/}
