@@ -16,6 +16,5 @@ USE_CMAKE=	yes
 USE_LANGUAGES=	c c++
 
 .include "../../audio/alsa-lib/buildlink3.mk"
-.include "../../wip/imgui/buildlink3.mk"
 .include "../../graphics/MesaLib/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"
