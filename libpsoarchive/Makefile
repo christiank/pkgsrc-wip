@@ -1,9 +1,9 @@
 # $NetBSD$
 
-DISTNAME=	libpsoarchive-c3bc8c80b4d94d160c3ea984fc7d31c5e546c92f
+DISTNAME=	libpsoarchive-67cc80d9901ff0caf94774841cece7fdb6613ea9
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GITHUB:=Sylverant/}
-GITHUB_TAG=	${PKGVERSION_NOREV}
+GIT_REPO=	git://git.code.sf.net/p/sylverant/libpsoarchive.git
+GIT_REVISION=	${PKGVERSION_NOREV}
 
 MAINTAINER=	dressupgeekout@gmail.com
 HOMEPAGE=	https://github.com/Sylverant/libpsoarchive
@@ -19,4 +19,5 @@ USE_TOOLS+=	aclocal automake autoconf libtool pkg-config
 pre-configure:
 	cd ${WRKSRC} && ./autogen.sh
 
+.include "../../wip/mk/git-package.mk"
 .include "../../mk/bsd.pkg.mk"
