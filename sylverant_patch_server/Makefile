@@ -1,10 +1,9 @@
 # $NetBSD$
 
 DISTNAME=	sylverant_patch_server-6fee504bb9d8c40eb5eba8bf8fc3b25fe5e834cf
-CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GITHUB:=Sylverant/}
-GITHUB_PROJECT=	patch_server
-GITHUB_TAG=	${PKGVERSION_NOREV}
+CATEGORIES=	games
+GIT_REPO=	git://git.code.sf.net/p/sylverant/patch_server.git
+GIT_REVISION=	${PKGVERSION_NOREV}
 
 MAINTAINER=	dressupgeekout@gmail.com
 HOMEPAGE=	https://github.com/Sylverant/patch_server
@@ -23,4 +22,5 @@ pre-configure:
 .include "../../databases/mysql57-client/buildlink3.mk"
 .include "../../textproc/libxml2/buildlink3.mk"
 .include "../../wip/libsylverant/buildlink3.mk"
+.include "../../wip/mk/git-package.mk"
 .include "../../mk/bsd.pkg.mk"
