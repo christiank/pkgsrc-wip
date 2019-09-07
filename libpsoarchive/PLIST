@@ -1,0 +1,9 @@
+@comment $NetBSD$
+include/psoarchive/AFS.h
+include/psoarchive/GSL.h
+include/psoarchive/PRS.h
+include/psoarchive/PRSD.h
+include/psoarchive/psoarchive-error.h
+lib/libpsoarchive.a
+lib/libpsoarchive.la
+lib/libpsoarchive.so.0.0
