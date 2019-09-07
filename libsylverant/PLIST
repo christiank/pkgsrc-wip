@@ -1,0 +1,15 @@
+include/sylverant/characters.h
+include/sylverant/checksum.h
+include/sylverant/config.h
+include/sylverant/database.h
+include/sylverant/debug.h
+include/sylverant/encryption.h
+include/sylverant/items.h
+include/sylverant/md5.h
+include/sylverant/memory.h
+include/sylverant/mtwist.h
+include/sylverant/prs.h
+include/sylverant/quest.h
+include/sylverant/sha4.h
+lib/libsylverant.a
+lib/libsylverant.la
