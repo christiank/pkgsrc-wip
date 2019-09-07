@@ -1,0 +1,4 @@
+$NetBSD$
+
+SHA1 (patch-src_pidfile.c) = 4017ec327c444ad8484cacb7f8b43d1a498254f3
+SHA1 (patch-src_shipgate.c) = 9b55582e4ff7888d6a676259000c07f760571a0e
