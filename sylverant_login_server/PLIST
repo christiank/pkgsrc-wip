@@ -1,0 +1,5 @@
+@comment $NetBSD$
+bin/login_server
+share/sylverant/l10n/login_server-de.yts
+share/sylverant/l10n/login_server-fr.yts
+share/sylverant/l10n/login_server-sp.yts
