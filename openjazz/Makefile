@@ -1,6 +1,6 @@
 # $NetBSD$
 
-DISTNAME=	openjazz-20180522
+DISTNAME=	openjazz-20190106
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GITHUB:=AlisterT/}
 GITHUB_PROJECT=	openjazz
@@ -17,7 +17,7 @@ USE_TOOLS+=	automake autoconf autoreconf pkg-config
 
 pre-configure:
 	${RUN} cd ${WRKSRC} && autoreconf -fiv
-	
+
 .include "../../audio/libmodplug/buildlink3.mk"
 .include "../../audio/libxmp/buildlink3.mk"
 .include "../../devel/SDL/buildlink3.mk"

@@ -19,11 +19,11 @@ GITHUB_PROJECT=	anvio
 GITHUB_TAG=	v${PV}
 
 MAINTAINER=	bacon@NetBSD.org
-HOMEPAGE=	http://merenlab.org/software/anvio/
+HOMEPAGE=	https://merenlab.org/software/anvio/
 COMMENT=	Analysis and visualization platform for 'omics data
 LICENSE=	gnu-gpl-v3
 
-DEPENDS=	samtools>0:../../biology/samtools \
+DEPENDS=	samtools>0:../../wip/samtools \
 		hmmer>0:../../wip/hmmer \
 		FastTree>0:../../wip/fasttree \
 		muscle>0:../../wip/muscle \
@@ -59,12 +59,12 @@ REPLACE_PYTHON=	tests/server/run_server_tests.py
 
 REPLACE_R=	sandbox/anvi-script-gen_stats_for_single_copy_genes.R
 
-REPLACE_INTERPRETER+=   R
-REPLACE.R.old=          /usr/bin/env Rscript
-REPLACE.R.new=          ${PREFIX}/bin/R
-REPLACE_FILES.R=        ${REPLACE_R}
+REPLACE_INTERPRETER+=	R
+REPLACE.R.old=		/usr/bin/env Rscript
+REPLACE.R.new=		${PREFIX}/bin/R
+REPLACE_FILES.R=	${REPLACE_R}
 
-PYTHON_VERSIONS_INCOMPATIBLE=	27 34 35
+PYTHON_VERSIONS_INCOMPATIBLE=	27
 
 PV=		5.2
 

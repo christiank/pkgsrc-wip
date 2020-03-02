@@ -5,7 +5,7 @@ CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_GITHUB:=jun7/}
 
 MAINTAINER=	pkgsrc-users@NetBSD.org
-HOMEPAGE=	http://wyeb.org/
+HOMEPAGE=	https://wyeb.org/
 COMMENT=	Vim-like webkit2gtk browser
 LICENSE=	gnu-gpl-v3
 
@@ -18,7 +18,7 @@ BUILD_MAKE_FLAGS+=	DISTROURI=https://www.pkgsrc.org/
 INSTALLATION_DIRS+=	bin lib/wyebrowser share/applications share/pixmaps
 
 MAKE_FILE=	makefile
-USE_TOOLS+=	gmake
+USE_TOOLS+=	gmake pkg-config
 
 # only used in main configuration file, should these dependencies be optional?
 DEPENDS+=	p5-File-MimeInfo-[0-9]*:../../devel/p5-File-MimeInfo
