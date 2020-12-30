@@ -5,7 +5,7 @@ PKGNAME=	pioneer-${VERSION}
 VERSION=	${GITHUB_TAG}
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GITHUB:=pioneerspacesim/}
-GITHUB_TAG=	20160205
+GITHUB_TAG=	20200203
 
 MAINTAINER=	cfkoch@edgebsd.org
 HOMEPAGE=	https://pioneerspacesim.net/
