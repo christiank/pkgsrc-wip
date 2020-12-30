@@ -1,10 +1,10 @@
 # $NetBSD: Makefile,v 1.1 2015/05/18 03:40:53 genolopolis Exp $
 
-DISTNAME=	julia-0.3.8_79599ada44
+DISTNAME=	julia-1.5.3
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GITHUB:=JuliaLang/}
 GITHUB_PROJECT=	julia
-GITHUB_RELEASE=	v0.3.8
+GITHUB_RELEASE=	v${PKGVERSION_NOREV}
 WRKSRC=		${WRKDIR}/julia
 
 MAINTAINER=	pkgsrc-users@netbsd.org
